@@ -1,0 +1,24 @@
+// manifest.json
+
+{
+  "manifest_version": 3,
+  "name": "YouTube Short Redirector",
+  "version": "1.0",
+  "description": "Redirects from YouTube Shorts to youtube.com",
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
